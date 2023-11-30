@@ -1,1 +1,3 @@
-# Project-2
+# My Friends Sorter
+
+## User Story 
