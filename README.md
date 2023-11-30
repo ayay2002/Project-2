@@ -10,4 +10,14 @@ Protect API keys and sensitive information with environment variables
 
 
 ## User Story 
+Given a website, I can sign up and login 
 
+When I login, I can see all my friends and ethnicity diversification chart. 
+
+When I View a friend I can see their full name, age, race, height, weight, birth city, and where they live. 
+
+When I make a friend, I can add my friend to my profile. 
+
+When I lose a friend, I can delete them from my profile. 
+
+## 
