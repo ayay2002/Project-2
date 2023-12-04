@@ -17,6 +17,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+app.use(require('./controllers'));
+
 app.use('/api/auth', authRoutes);
 
 sequelize.sync({ force: false }).then(() => {
