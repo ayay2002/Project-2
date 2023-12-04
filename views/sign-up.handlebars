@@ -1,5 +1,29 @@
-<h3>this is the sign-up</h3>
+<!-- views/sign-up.handlebars -->
 
+<!DOCTYPE html>
+<html lang="en">
 
-
-<script src="/sign-up.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{pageTitle}}</title>
+  {{!-- Add your additional head elements (stylesheets, etc.) here --}}
+</head>
+<body>
+  <div>
+    <h3>{{pageTitle}}</h3>
+    <form id="signup-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+  <script src="/sign-up.js"></script>
+</body>
+</html>
