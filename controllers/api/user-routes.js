@@ -6,3 +6,23 @@ const { User } = require('../../models');
 router.get('/signup', (req, res) => {
     res.render('sign-up');
 });
+
+//route handling user sign-up
+
+router.post('/signup', async (req, res) => {
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        
+        //create new user in database
+        const newUser = await User.create({
+            username: req.body.username,
+            email: req.body.email,
+            password: hashedPassword,
+        });
+
+        res.redirect('/login');
+    } catch (err) {
+        res.status(500).json({err})
+    }
+    }
+})
