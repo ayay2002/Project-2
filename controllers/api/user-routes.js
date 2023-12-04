@@ -12,7 +12,7 @@ router.get('/signup', (req, res) => {
 router.post('/signup', async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
-        
+
         //create new user in database
         const newUser = await User.create({
             username: req.body.username,
@@ -22,7 +22,7 @@ router.post('/signup', async (req, res) => {
 
         res.redirect('/login');
     } catch (err) {
-        res.status(500).json({err})
+        res.status(400).json({err})
     }
-    }
-})
+    
+});
