@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{pageTitle}}</title>
-  {{!-- Add your additional head elements (stylesheets, etc.) here --}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ username }}'s Profile</title>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-  <div>
-    <h3>{{pageTitle}}</h3>
-    <p>Welcome, {{username}}!</p>
-    <p>Email: {{email}}</p>
-    {{!-- Add more profile information as needed --}}
-  </div>
-  <script src="/profile.js"></script>
-</body>
 
+    <header class="jumbotron text-center">
+        <h1>{{ username }}'s Profile</h1>
+        <img src="{{ avatar }}" alt="{{ username }}'s Avatar" class="img-thumbnail">
+    </header>
+
+    <section class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>About Me</h2>
+                <p>{{ bio }}</p>
+            </div>
+
+            <div class="col-md-6">
+                <h2>Contact Information</h2>
+                <p>Email: {{ email }}</p>
+                <p>Website: <a href="{{ website }}" target="_blank">{{ website }}</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- add more sections for other profile info -->
+
+    <footer class="text-center mt-4">
+        <p>&copy; 2023 {{ username }}</p>
+    </footer>
+
+    <!-- add bootstrap for js if needed -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
 </html>
+
