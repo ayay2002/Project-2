@@ -1,0 +1,38 @@
+[
+{
+    "first_name": "John",
+    "Last_name": "Smith",
+    "age": "26",
+    "race": "white",
+    "birth_city": "Charleston",
+    "home_city": "Richmond"
+},{
+    "first_name": "Devonte",
+    "Last_name": "Robinson",
+    "age": "32",
+    "race": "Black",
+    "birth_city": "New Orleans",
+    "home_city": "Baton Rouge"
+},{
+    "first_name": "Cristiano",
+    "Last_name": "Ronoldo",
+    "age": "37",
+    "race": "Hispanic",
+    "birth_city": "Miami",
+    "home_city": "Orlando"
+},{
+    "first_name": "Chang",
+    "Last_name": "Wong",
+    "age": "76",
+    "race": "Asian",
+    "birth_city": "Houston",
+    "home_city": "Dallas"
+},{
+    "first_name": "Aleut",
+    "Last_name": "Cupan",
+    "age": "17",
+    "race": "Alaskian Native",
+    "birth_city": "Anchorage",
+    "home_city": "Seattle"
+}
+]
