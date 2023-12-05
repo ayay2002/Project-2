@@ -19,11 +19,11 @@ Friend.init(
             type: DataTypes.STRING,
             allowNull: true,
         },
-        Age: {
+        age: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        Race: {
+        race: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -38,6 +38,7 @@ Friend.init(
     {
         sequelize,
         freezeTableName: true,
+        timestamps: false,
         underscored: true,
         modelName: 'friend',
     }
