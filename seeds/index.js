@@ -5,7 +5,7 @@ const FriendData = require('./friends-seeds.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  await Friend.bulkCreate(FriendData, {
+  await friend.bulkCreate(FriendData, {
     individualHooks: true,
     returning: true,
   });
