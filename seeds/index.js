@@ -1,11 +1,11 @@
 const sequelize = require('../config/connection');
-const friend = require('../models/Dish');
-const dishData = require('./dish-seeds.json');
+const friend = require('../models/Friend');
+const FriendData = require('./friends-seeds.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  await Dish.bulkCreate(dishData, {
+  await friend.bulkCreate(FriendData, {
     individualHooks: true,
     returning: true,
   });
