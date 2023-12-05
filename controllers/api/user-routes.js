@@ -39,4 +39,35 @@ router.post('/signup', async (req, res) => {
     }
 });
 
+//Login route
+router.post('/login', async (req, res) => {
+    try {
+        //find user data by email
+        const userData = await User.findOne({ where: { email: req.body.email}});
+        
+        //check if user email exists in database
+        if (!userData) {
+            return res.status(400).json({ message: 'Incorrect email or password'});
+        }
+
+        //check if password is valid
+        const correctPassword = await bcrypt.compare(req.body.password, userData.password);
+
+        if (!correctPassword) {
+            return res.status(400).json({ message: 'Incorrect email or password'});
+        }
+
+        //if email & password are correct => save session
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
+
+            res.json({ user: userData, message: 'You are now logged in!' });
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
 module.exports = router;
