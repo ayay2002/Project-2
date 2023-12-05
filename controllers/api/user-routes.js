@@ -26,6 +26,17 @@ router.post('/signup', async (req, res) => {
             password: hashedPassword,
         });
 
-       
-    
+        // log user in after sign up
+       req.session.save(() => {
+        req.session.user_id = newUser.id;
+        req.session.logged_in = true;
+
+        res.json({ user: newUser, message: "You are now signed up & logged in!"});
+       });
+
+    } catch (err) {
+        res.status(400).json({ err});
+    }
 });
+
+module.exports = router;
