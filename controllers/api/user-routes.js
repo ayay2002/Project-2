@@ -16,13 +16,16 @@ router.post('/signup', async (req, res) => {
         //create new user in database
         const newUser = await User.create({
             username: req.body.username,
+            first_name: req.boddy.first_name,
+            last_name: req.body.last_name,
+            age: eq.body.age,
+            race: req.body.race,
+            birth_city: req.body.birth_city,
+            home_city: req.body.home_city,
             email: req.body.email,
             password: hashedPassword,
         });
 
-        res.redirect('/login');
-    } catch (err) {
-        res.status(400).json({err})
-    }
+       
     
 });
