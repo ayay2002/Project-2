@@ -39,7 +39,7 @@ router.post('/signup', async (req, res) => {
     }
 });
 
-//Login route
+//Login route for existing users
 router.post('/login', async (req, res) => {
     try {
         //find user data by email
