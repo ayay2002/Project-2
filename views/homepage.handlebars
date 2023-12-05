@@ -1,16 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{pageTitle}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ siteName }} - Connect and Make Friends</title>
+    <!-- bootstrap csss -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-  <div>
-    <h1>{{pageTitle}}</h1>
-{{!-- Add content for the homepage here --}}
-  </div>
-{{!-- Add your additional script includes here if needed --}}
+
+    <header class="jumbotron text-center">
+        <h1>Welcome to {{ siteName }}</h1>
+        <p class="lead">Connect with new people and make friends!</p>
+    </header>
+
+    <section class="container text-center">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <a href="/signup" class="btn btn-primary btn-lg">Sign Up</a>
+                <a href="/login" class="btn btn-success btn-lg">Log In</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Find Friends</h2>
+        <p>Discover people with shared interests:</p>
+        <ul class="list-group">
+            {{#each users}}
+                <li class="list-group-item">
+                    <img src="{{ avatar }}" alt="{{ username }}'s Avatar" class="img-thumbnail">
+                    <h3>{{ username }}</h3>
+                    <p>{{ bio }}</p>
+                    <button class="btn btn-outline-info">Add Friend</button>
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+
+    <section class="container">
+        <h2>Friend Requests</h2>
+        <ul class="list-group">
+            {{#each friendRequests}}
+                <li class="list-group-item">
+                    <img src="{{ avatar }}" alt="{{ username }}'s Avatar" class="img-thumbnail">
+                    <h3>{{ username }}</h3>
+                    <p>{{ bio }}</p>
+                    <button class="btn btn-outline-success">Accept</button>
+                    <button class="btn btn-outline-danger">Decline</button>
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+
+    <footer class="text-center mt-4">
+        <p>&copy; 2023 {{ siteName }}</p>
+    </footer>
+
+    <!-- possibly add bootstrap for js if needed -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- add js here is needed -->
+
 </body>
 </html>
+

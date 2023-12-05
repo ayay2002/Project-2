@@ -35,7 +35,12 @@ router.get('/profile', async (req, res) => {
 
 router.get('/sign-up', async (req, res) => {
   res.render("sign-up")
-});
+  });
 
+router.get('/registration', async (req, res) => {
+  res.render("registration")
+  });
+
+      
 module.exports = router;
 
