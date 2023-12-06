@@ -29,18 +29,23 @@ router.get('/', async (req, res) => {
   res.render("homepage")
 });
 
+router.get('/chart', async (req, res) => {
+  res.render("chart")
+});
+router.get('/friends', async (req, res) => {
+  res.render("friends")
+});
+
+  router.get('/sign-up', async (req, res) => {
+    res.render("sign-up")
+  });
+
+router.get('/login', async (req, res) => {
+  res.render("login")
+});
+
 router.get('/profile', async (req, res) => {
   res.render("profile")
 });
-
-router.get('/sign-up', async (req, res) => {
-  res.render("sign-up")
-  });
-
-router.get('/registration', async (req, res) => {
-  res.render("registration")
-  });
-
-      
 module.exports = router;
 
