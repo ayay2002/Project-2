@@ -3,14 +3,17 @@ const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 
 //route for displaying sign-up form
-router.get('/signup', (req, res) => {
+router.get('/sign-up', (req, res) => {
     res.render('sign-up');
 });
 
 //route handling user sign-up
 
+router.post('/sign-up', async (req, res) => {
+
 router.post('/signup', async (req, res) => {
     console.log("sucxess")
+
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
