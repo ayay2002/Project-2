@@ -41,5 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         // need to update to handle sign up error
       }
+    } catch (error) {
+      console.error('An error occurred during sign-up:', error);
+    }
   });
 });

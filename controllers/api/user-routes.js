@@ -9,8 +9,6 @@ router.get('/sign-up', (req, res) => {
 
 //route handling user sign-up
 
-router.post('/sign-up', async (req, res) => {
-
 router.post('/signup', async (req, res) => {
     console.log("sucxess")
 
