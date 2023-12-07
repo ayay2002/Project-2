@@ -7,27 +7,34 @@
     <title>My Friends</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body class="container mt-5">
-    <div class="jumbotron">
-        <h3>My Friends</h3>
-        <div class="form-group">
-            <label for="friendSearch">Search for new friends:</label>
-            <div class="input-group">
-                <input type="text" class="form-control" id="friendSearch" name="friendSearch" placeholder="Enter friend's username">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" onclick="searchForFriend()">Search</button>
+    <div class="card">
+        <div class="card-header text-center">
+            <h3>My Friends</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="friendSearch">Search for new friends:</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="friendSearch" name="friendSearch" placeholder="Enter friend's username">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" onclick="searchForFriend()">Search</button>
+                    </div>
                 </div>
             </div>
+            <ul class="list-group">
+                {{#each friends}}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{this.username}}
+                    <button class="btn btn-danger btn-sm" onclick="deleteFriend('{{this.id}}')">Delete</button>
+                </li>
+                {{/each}}
+            </ul>
         </div>
-        <ul class="list-group">
-            {{#each friends}}
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                {{this.username}}
-                <button class="btn btn-danger btn-sm" onclick="deleteFriend('{{this.id}}')">Delete</button>
-            </li>
-            {{/each}}
-        </ul>
     </div>
+
+    <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
