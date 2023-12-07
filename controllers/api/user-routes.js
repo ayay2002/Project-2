@@ -16,9 +16,9 @@ router.post('/signup', async (req, res) => {
         //create new user in database
         const newUser = await User.create({
             username: req.body.username,
-            first_name: req.boddy.first_name,
+            first_name: req.body.first_name,
             last_name: req.body.last_name,
-            age: eq.body.age,
+            age: req.body.age,
             race: req.body.race,
             birth_city: req.body.birth_city,
             home_city: req.body.home_city,
