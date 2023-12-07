@@ -1,1 +1,43 @@
-<h3>Page for users friends and search bar for new friends and delte friends</h3>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Friends</title>
+</head>
+
+<body>
+    <div>
+        <h3>My Friends</h3>
+        <div>
+            <label for="friendSearch">Search for new friends:</label>
+            <input type="text" id="friendSearch" name="friendSearch" placeholder="Enter friend's username">
+            <button onclick="searchForFriend()">Search</button>
+        </div>
+
+        <!-- List of Current Friends -->
+        <ul>
+            {{#each friends}}
+            <li>
+                {{this.username}}
+                <button onclick="deleteFriend('{{this.id}}')">Delete</button>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <script>
+        function searchForFriend() {
+            //Implement the logic to search for new friends
+            //You can use JavaScript to handle the search functionality
+        }
+
+        function deleteFriend(friendId) {
+            //Implement the logic to delete a friend
+            //You can use JavaScript to handle the deletion functionality
+        }
+    </script>
+</body>
+
+</html>
