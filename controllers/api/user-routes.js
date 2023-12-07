@@ -10,6 +10,7 @@ router.get('/signup', (req, res) => {
 //route handling user sign-up
 
 router.post('/signup', async (req, res) => {
+    console.log("sucxess")
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
@@ -35,7 +36,8 @@ router.post('/signup', async (req, res) => {
        });
 
     } catch (err) {
-        res.status(400).json({ err});
+        res.status(400).json({err:err.message});
+        console.log(err.message)
     }
 });
 

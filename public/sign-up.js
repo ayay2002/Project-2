@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
       try {
         // Make a POST request to your signup API endpoint
-        const response = await fetch('/api/signup', {
+        const response = await fetch('/api/user/signup', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
