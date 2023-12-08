@@ -17,7 +17,7 @@
                         <h3>Register - MyFriends</h3>
                     </div>
                     <div class="card-body">
-                        <form action="/signup" method="post" id="signup-form">
+                        <form action="/sign-up" method="post" id="signup-form">
                             <label for="username">Username:</label>
                             <input type="text" class="form-control" id="username" name="username" required>
 
@@ -48,6 +48,9 @@
                             <button type="submit" class="btn btn-success btn-block">Sign Up</button>
                         </form>
                     </div>
+                    <div id="success-message" style="color: green; display: none;">
+                        Registration successful! You can now log in.
+                    </div>
                     <div class="card-footer text-muted text-center">
                         <p>Already have an account? <a href="/login">Login here</a></p>
                     </div>
@@ -58,7 +61,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="..\public\sign-up.js"></script>
+    <script src="./sign-up.js"></script>
 </body>
 
 </html>
