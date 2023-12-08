@@ -9,7 +9,7 @@ router.get('/sign-up', (req, res) => {
 
 //route handling user sign-up
 
-router.post('/signup', async (req, res) => {
+router.post('/sign-up', async (req, res) => {
     console.log("sucxess")
 
     try {
@@ -32,7 +32,7 @@ router.post('/signup', async (req, res) => {
        req.session.save(() => {
         req.session.user_id = newUser.id;
         req.session.logged_in = true;
-
+        console.log('=,=,=,=,=,=,=,=,=,=,===,=,=,=,=,=,===,=,=')
         res.json({ user: newUser, message: "You are now signed up & logged in!"});
        });
 

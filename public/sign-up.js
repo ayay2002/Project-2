@@ -6,18 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Extract form data
     const username = document.getElementById('username').value;
-    const firstName = document.getElementById('first_name').value;
-    const lastName = document.getElementById('last_name').value;
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
     const age = document.getElementById('age').value;
     const race = document.getElementById('race').value;
-    const birthCity = document.getElementById('birth_city').value;
-    const homeCity = document.getElementById('home_city').value;
+    const birthCity = document.getElementById('birthCity').value;
+    const homeCity = document.getElementById('homeCity').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     try {
       // Send POST request to server with all form data
-      const response = await fetch('/api/auth/signup', {
+      const response = await fetch('/api/user/sign-up', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -26,24 +26,22 @@ document.addEventListener('DOMContentLoaded', () => {
           username,
           first_name: firstName,
           last_name: lastName,
-          age,
-          race,
-          birthCity,
-          homeCity,
-          email,
-          password,
+          age: age,
+          race: race,
+          birthCity: birthCity,
+          homeCity: homeCity,
+          email: email,
+          password: password,
         }),
       });
 
       if (response.ok) {
-        const responseData = await response.json();
-        console.log('Sign-up successful:', responseData);
-        window.location.href = '/login';
+        console.log('signup successful');
+        signUpForm.style.display = 'none';
+        successMessage.style.display = 'block';
       } else {
-        // Handle sign-up error
-        const errorResponse = await response.json();
-        console.error('Sign-up error:', errorResponse.message);
-        alert('Sign-up failed. Please check your information and try again.');
+       console.error('signup failed:', error)
+
       }
     } catch (error) {
       console.error('An error occurred during sign-up:', error);
