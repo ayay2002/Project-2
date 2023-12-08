@@ -10,7 +10,7 @@ router.get('/sign-up', (req, res) => {
 //route handling user sign-up
 
 router.post('/sign-up', async (req, res) => {
-    console.log("sucxess")
+    console.log("Received data:", req.body);
 
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
@@ -18,12 +18,12 @@ router.post('/sign-up', async (req, res) => {
         //create new user in database
         const newUser = await User.create({
             username: req.body.username,
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
             age: req.body.age,
             race: req.body.race,
-            birth_city: req.body.birth_city,
-            home_city: req.body.home_city,
+            birthCity: req.body.birthCity,
+            homeCity: req.body.homeCity,
             email: req.body.email,
             password: hashedPassword,
         });
@@ -32,7 +32,7 @@ router.post('/sign-up', async (req, res) => {
        req.session.save(() => {
         req.session.user_id = newUser.id;
         req.session.logged_in = true;
-        console.log('=,=,=,=,=,=,=,=,=,=,===,=,=,=,=,=,===,=,=')
+        console.log('success')
         res.json({ user: newUser, message: "You are now signed up & logged in!"});
        });
 

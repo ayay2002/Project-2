@@ -36,9 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (response.ok) {
-        console.log('signup successful');
-        signUpForm.style.display = 'none';
-        successMessage.style.display = 'block';
+        window.location.replace('/profile');
       } else {
        console.error('signup failed:', error)
 

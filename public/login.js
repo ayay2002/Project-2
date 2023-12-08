@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('login-form');
+    const loginForm = document.getElementById('signup-form');
   
     loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
   
       // Extract form data
-      const email = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
   
       try {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            username,
+            email,
             password,
           }),
         });
