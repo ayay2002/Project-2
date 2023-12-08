@@ -26,20 +26,30 @@ document.addEventListener('DOMContentLoaded', () => {
           username,
           first_name: firstName,
           last_name: lastName,
-          age: age,
-          race: race,
-          birthCity: birth_city,
-          homeCity: home_city,
-          email: email,
-          password: password,
-
+          age,
+          race,
+          birthCity,
+          homeCity,
+          email,
+          password,
         }),
       });
 
       if (response.ok) {
-        // need to update to handle successful sign up
+        // Successful sign-up
+        const responseData = await response.json(); // Assuming the server sends some data on success
+        console.log('Sign-up successful:', responseData);
+
+        // Optionally, you can redirect the user to another page
+        window.location.href = '/login';
       } else {
-        // need to update to handle sign up error
+        // Handle sign-up error
+        const errorResponse = await response.json(); // Assuming the server sends an error message
+        console.error('Sign-up error:', errorResponse.message);
+
+        // You might want to display the error message to the user or handle it in some way
+        // For example, show an alert or update a message on the page
+        alert('Sign-up failed. Please check your information and try again.');
       }
     } catch (error) {
       console.error('An error occurred during sign-up:', error);
