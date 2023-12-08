@@ -1,6 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Charts Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
 
-<canvas id="chart"></canvas>
+<div id="chart-container">
+  <canvas id="race-chart" width="400" height="400"></canvas>
+  <canvas id="age-chart" width="400" height="400"></canvas>
+  <!-- Add more canvas elements for additional charts if needed -->
+</div>
 
-{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="./chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Chart for Race
+  const raceCtx = document.getElementById('race-chart').getContext('2d');
+  const raceChart = new Chart(raceCtx, {
+    type: 'pie',
+    data: {
+      labels: ['Asian', 'Black', 'White'],
+      datasets: [{
+        label: 'Race Chart',
+        data: [150, 100, 200],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)'
+        ],
+        hoverOffset: 4
+      }]
+    },
+    options: {
+      responsive: false,
+      maintainAspectRatio: false
+    }
+  });
+
+  // Chart for Age
+  const ageCtx = document.getElementById('age-chart').getContext('2d');
+  const ageChart = new Chart(ageCtx, {
+    type: 'pie',
+    data: {
+      labels: ['0-18', '19-35', '36-60'],
+      datasets: [{
+        label: 'Age Chart',
+        data: [50, 150, 250],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)'
+        ],
+        hoverOffset: 4
+      }]
+    },
+    options: {
+      responsive: false,
+      maintainAspectRatio: false
+    }
+  });
+});
+</script>
+
+</body>
+</html>

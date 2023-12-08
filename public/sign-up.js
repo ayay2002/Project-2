@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
           homeCity: homeCity,
           email: email,
           password: password,
-
         }),
       });
 
@@ -42,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         successMessage.style.display = 'block';
       } else {
        console.error('signup failed:', error)
+
       }
     } catch (error) {
       console.error('An error occurred during sign-up:', error);

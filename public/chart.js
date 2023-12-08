@@ -13,7 +13,7 @@ ctx.height = chartHeight;
 const chart = new Chart(ctx, {
   type: 'pie',
   data: {
-    labels: ['Red', 'Blue', 'Yellow'],
+    labels: ['Race', 'Age', 'Yellow'],
     datasets: [{
       label: 'My First Dataset',
       data: [300, 50, 100],
