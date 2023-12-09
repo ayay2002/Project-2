@@ -32,15 +32,15 @@ router.post('/sign-up', async (req, res) => {
        req.session.save(() => {
         req.session.user_id = newUser.id;
         req.session.logged_in = true;
-        console.log('success')
-        res.json({ user: newUser, message: "You are now signed up & logged in!"});
-       });
+        res.json({ success: true, message: "You are now signed up & logged in!" });
+    });
 
-    } catch (err) {
-        res.status(400).json({err:err.message});
-        console.log(err.message)
-    }
-});
+        } catch (err) {
+            console.error('An error occurred during sign-up:', err);
+            res.status(500).json({ success: false, message: 'An error occurred during sign-up.' });
+            }
+    });
+
 
 //Login route for existing users
 router.post('/login', async (req, res) => {
