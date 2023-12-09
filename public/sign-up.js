@@ -35,12 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }),
       });
 
-      if (response.ok) {
+      const responseData = await response.json();
+
+      if (responseData.success) {
         window.location.replace('/profile');
       } else {
-       console.error('signup failed:', error)
-
+        console.error('Sign-up failed:', responseData.message);
+        // Handle the error, show a message, etc.
       }
+    
     } catch (error) {
       console.error('An error occurred during sign-up:', error);
     }
