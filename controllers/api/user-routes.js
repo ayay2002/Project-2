@@ -43,17 +43,20 @@ router.post('/sign-up', async (req, res) => {
 
 
 //Login route for existing users
-router.post('/login', async (req, res) => {
+router.post('/api/auth/login', async (req, res) => {
     try {
         //find user data by email
+        console.log('Login route accessed');
         const userData = await User.findOne({ where: { email: req.body.email}});
         
         //check if user email exists in database
         if (!userData) {
+            console.log('User not found:', req.body.email);
             return res.status(400).json({ message: 'Incorrect email or password'});
         }
 
         //check if password is valid
+        console.log('Incorrect password for user:', req.body.email);
         const correctPassword = await bcrypt.compare(req.body.password, userData.password);
 
         if (!correctPassword) {
@@ -65,6 +68,7 @@ router.post('/login', async (req, res) => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
 
+            console.log('User logged in:', req.body.email);
             res.json({ user: userData, message: 'You are now logged in!' });
         });
     } catch (err) {
