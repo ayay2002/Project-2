@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const homeCity = document.getElementById('homeCity').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-
+    console.log(email, homeCity)
     try {
       // Send POST request to server with all form data
       const response = await fetch('/api/user/sign-up', {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          username,
+          username: username,
           first_name: firstName,
           last_name: lastName,
           age: age,
