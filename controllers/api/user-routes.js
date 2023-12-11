@@ -14,12 +14,12 @@ router.post('/sign-up', async (req, res) => {
 
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
-
+        console.log(req.body.email, req.body.homeCity)
         //create new user in database
         const newUser = await User.create({
             username: req.body.username,
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
             age: req.body.age,
             race: req.body.race,
             birthCity: req.body.birthCity,

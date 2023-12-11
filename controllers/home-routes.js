@@ -1,4 +1,8 @@
+const req = require('express/lib/request');
+
 const router = require('express').Router();
+const {User} = require('../models');
+const { LogarithmicScale } = require('chart.js');
 // const Friend = require('../models/Friend');
 
 // route to get all friends
@@ -45,6 +49,19 @@ router.get('/login', async (req, res) => {
 });
 
 router.get('/profile', async (req, res) => {
-  res.render("profile")
+  try{
+    const userData = await User.findByPk(req.session.user_id)
+    console.log('USER DATA');
+    console.log(userData)
+    const user = userData.get({plain:true})
+    console.log('USER');
+    console.log(user)
+    res.render("profile", {...user})
+  }
+  catch(err){
+    res.status(500).json(err)
+
+  }
+  
 });
 module.exports = router;
