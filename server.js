@@ -8,8 +8,14 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const { Sequelize } = require('sequelize');
 
-// Use the JAWSDB_URL if available, otherwise use a local MySQL URL
-const sequelize = new Sequelize(process.env.wb39lt71kvkgdmw0.cbetxkdyhwsb.us-east-1.rds.amazonaws.com || 'mysql://root:Hr3694642@localhost:3306/cryptic-shore-21983');
+const sequelize = new Sequelize({
+  host: 'wb39lt71kvkgdmw0.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+  username: 'ghcd5sgxjopl8y0c',
+  password: 'vj0xvtgde0o03bu8',
+  port: 3306,
+  database: 'nq2uopn4homyqjoe',
+  dialect: 'mysql',
+});
 
 const sess = {
   secret: 'Super secret secret',
