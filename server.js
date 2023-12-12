@@ -9,7 +9,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const { Sequelize } = require('sequelize');
 
 // Use the JAWSDB_URL if available, otherwise use a local MySQL URL
-const sequelize = new Sequelize(process.env.JAWSDB_URL || 'mysql://root:Hr3694642@localhost:3306/cryptic-shore-21983');
+const sequelize = new Sequelize(process.env.wb39lt71kvkgdmw0.cbetxkdyhwsb.us-east-1.rds.amazonaws.com || 'mysql://root:Hr3694642@localhost:3306/cryptic-shore-21983');
 
 const sess = {
   secret: 'Super secret secret',
