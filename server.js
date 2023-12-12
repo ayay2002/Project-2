@@ -6,7 +6,10 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const sequelize = new Sequelize(process.env.JAWSDB_URL || 'mysql://root:Hr3694642@https://git.heroku.com/cryptic-shore-21983.git:3306/cryptic-shore-21983');
+const { Sequelize } = require('sequelize');
+
+// Use the JAWSDB_URL if available, otherwise use a local MySQL URL
+const sequelize = new Sequelize(process.env.JAWSDB_URL || 'mysql://root:Hr3694642@localhost:3306/cryptic-shore-21983');
 
 const sess = {
   secret: 'Super secret secret',
