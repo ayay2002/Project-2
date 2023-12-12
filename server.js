@@ -1,3 +1,4 @@
+// server.js
 const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
@@ -6,16 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const { Sequelize } = require('sequelize');
-
-const sequelize = new Sequelize({
-  host: 'wb39lt71kvkgdmw0.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-  username: 'ghcd5sgxjopl8y0c',
-  password: 'vj0xvtgde0o03bu8',
-  port: 3306,
-  database: 'nq2uopn4homyqjoe',
-  dialect: 'mysql',
-});
+const sequelize = require('./connection'); // <-- Use the connection module
 
 const sess = {
   secret: 'Super secret secret',
