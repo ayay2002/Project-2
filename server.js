@@ -26,7 +26,7 @@ if (process.env.DATABASE_URL) {
 } else {
   // Use local database configuration
   sequelize = new Sequelize({
-    host: 'http://localhost:3001/',  // Update with your local host
+    host: 'localhost:3001',  // Update with your local host
     username: 'root', // Update with your local username
     password: 'Hr3694642', // Update with your local password
     port: 3306,
