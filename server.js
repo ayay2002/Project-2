@@ -3,7 +3,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 const sequelize = require('./config/connection');
 const session = require('express-session');
 //const authRoutes = require('./routes/auth-routes');
@@ -24,6 +24,8 @@ const sess = {
     db: sequelize
   })
 };
+
+
 
 app.use(session(sess));
 
