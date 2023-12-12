@@ -4,11 +4,9 @@ const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 const app = express();
 const PORT = process.env.PORT || 3001;
-const sequelize = require('./config/connection');
 const session = require('express-session');
-//const authRoutes = require('./routes/auth-routes');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
+const sequelize = new Sequelize(process.env.JAWSDB_URL || 'mysql://root:Hr3694642@https://git.heroku.com/cryptic-shore-21983.git:3306/cryptic-shore-21983');
 
 const sess = {
   secret: 'Super secret secret',
@@ -21,11 +19,11 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
-  })
+    db: sequelize,
+    checkExpirationInterval: 15 * 60 * 1000, // 15 minutes
+    expiration: 24 * 60 * 60 * 1000, // 24 hours
+  }),
 };
-
-
 
 app.use(session(sess));
 
@@ -36,11 +34,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 app.use(require('./controllers'));
 
-//app.use('/api/auth', authRoutes);
-
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log('Now listening on port ' + PORT));
 });
