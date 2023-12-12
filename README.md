@@ -26,4 +26,12 @@ When I make a friend, I can add my friend to my profile.
 
 When I lose a friend, I can delete them from my profile. 
 
-## 
+## Usage
+![alt text](assets/images/Screenshot%202023-12-11%20at%206.46.56 PM.png)
+![alt text](assets/images/Screenshot%202023-12-11%20at%206.47.09 PM.png)
+![alt text](assets/images/Screenshot%202023-12-11%20at%206.47.17 PM.png)
+![alt text](assets/images/Screenshot%202023-12-11%20at%206.47.29 PM.png)
+![alt text](assets/images/Screenshot%202023-12-11%20at%206.47.41 PM.png)
+
+## Credit
+All of the credit goes to Alexander Booth, Jennifer Winter, Tahynis Lin, Raymond Lacrouts and Landan Bichard.
