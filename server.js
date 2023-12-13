@@ -10,19 +10,11 @@ const { Sequelize } = require('sequelize');
 
 let sequelize;
 
-if (process.env.DATABASE_URL) {
+
+
+if (process.env.JAWSDB_URL) {
   // Use Heroku database
-  sequelize = new Sequelize(process.env.DATABASE_URL, {
-    dialect: 'mysql',
-    protocol: 'mysql',
-    logging: true,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-    },
-  });
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   // Use local database configuration
   sequelize = new Sequelize({
