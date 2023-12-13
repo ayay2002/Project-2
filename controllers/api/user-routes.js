@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { User } = require('../../models');
+const session = require('express-session');
+const { parse } = require('path');
 
 //route for displaying sign-up form
 router.get('/sign-up', (req, res) => {
@@ -20,7 +22,7 @@ router.post('/sign-up', async (req, res) => {
             username: req.body.username,
             first_name: req.body.first_name,
             last_name: req.body.last_name,
-            age: req.body.age,
+            age: parseInt(req.body.age),
             race: req.body.race,
             birthCity: req.body.birthCity,
             homeCity: req.body.homeCity,
@@ -30,13 +32,14 @@ router.post('/sign-up', async (req, res) => {
 
         // log user in after sign up
        req.session.save(() => {
+        console.log(session.saved)
         req.session.user_id = newUser.id;
         req.session.logged_in = true;
         res.json({ success: true, message: "You are now signed up & logged in!" });
     });
 
         } catch (err) {
-            console.error('An error occurred during sign-up:', err);
+            console.error('An error occurred during sign-up:', err.message);
             res.status(500).json({ success: false, message: 'An error occurred during sign-up.' });
             }
     });
