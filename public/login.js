@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Form Data:', { email, password });
       try {
         // Send POST request to server with login data
-        const response = await fetch('/api/auth/login', {
+        const response = await fetch('/api/user/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
