@@ -1,16 +1,15 @@
 const router = require('express').Router();
-const Friend = require('../../models/Friend');
+const {User, Friend} = require('../../models');
 
+
+// /friend
 // Route to create/add a friend
-router.post('/', async (req, res) => {
+router.get('/search/:firstName', async (req, res) => {
   try {
-    const friendData = await Friend.create({
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      age: req.body.age,
-      race: req.body.race,
-      birth_city: req.body.birth_city,
-      home_city: req.body.home_city,
+    const friendData = await User.findAll({
+      where: {
+        first_name: req.params.firstName
+      }
     });
 
     res.status(201).json(friendData);

@@ -41,9 +41,9 @@ router.post('/sign-up', async (req, res) => {
             }
     });
 
-
+// /api/user
 //Login route for existing users
-router.post('/api/auth/login', async (req, res) => {
+router.post('/login', async (req, res) => {
     try {
         //find user data by email
         console.log('Login route accessed');
