@@ -18,20 +18,16 @@
                 <div class="form-group">
                     <label for="searchInput">Search for new friends:</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="searchInput" name="searchInput" placeholder="Enter friend's username">
+                        <input type="text" class="form-control" id="searchInput" name="searchInput"
+                            placeholder="Enter friend's username">
                         <div class="input-group-append">
                             <button class="btn btn-primary" onclick="searchForFriend()">Search</button>
                         </div>
                     </div>
                 </div>
                 <div id="searchResults"></div>
-                <ul class="list-group">
-                    {{#each friends}}
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        {{this.username}}
-                        <button class="btn btn-danger btn-sm" onclick="deleteFriend('{{this.id}}')">Delete</button>
-                    </li>
-                    {{/each}}
+                <ul class="list-group" id="friendsList">
+                    <!-- Friends will be dynamically added here -->
                 </ul>
             </div>
         </div>
@@ -42,35 +38,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-        function searchForFriend() {
-
-            const searchQuery = document.getElementById('searchInput').value;
-
-            const allFriends = ['Alice', 'Bob', 'Charlie', 'David', 'Eve'];
-
-            const matchingFriends = allFriends.filter(friend =>
-                friend.toLowerCase().includes(searchQuery.toLowerCase())
-            );
-            const searchResultsContainer = document.getElementById('searchResults');
-            searchResultsContainer.innerHTML = '';
-            if (matchingFriends.length === 0) {
-                searchResultsContainer.innerHTML = 'No matching friends found.';
-            } else {
-                const resultList = document.createElement('ul');
-                matchingFriends.forEach(friend => {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = friend;
-                    resultList.appendChild(listItem);
-                });
-                searchResultsContainer.appendChild(resultList);
-            }
-        }
-        function deleteFriend(friendId) {
-            // Implement the logic to delete a friend
-            // You can use JavaScript to handle the deletion functionality
-        }
-    </script>
+    <!-- Link to the external JavaScript file -->
+    <script src="../public/friends.js"></script>
 </body>
 
 </html>
