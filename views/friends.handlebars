@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +24,12 @@
                 </div>
                 <div id="searchResults"></div>
                 <ul class="list-group" id="friendsList">
-                    <!-- Friends will be dynamically added here -->
+                    {{#each friends}}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{this.first_name}} {{this.Last_name}}
+                        <button class="btn btn-danger btn-sm" onclick="deleteFriend('{{this.id}}')">Delete</button>
+                    </li>
+                    {{/each}}
                 </ul>
             </div>
         </div>
@@ -37,61 +40,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-        // Friends data from friends-seeds.json
-        const allFriends = [
-            { id: '1', username: 'John' },
-            { id: '2', username: 'Devonte' },
-            { id: '3', username: 'Cristiano' },
-            { id: '4', username: 'Chang' },
-            { id: '5', username: 'Aleut' }
-        ];
-
-        function searchForFriend() {
-            const searchQuery = document.getElementById('searchInput').value;
-
-            const matchingFriends = allFriends.filter(friend =>
-                friend.username.toLowerCase().includes(searchQuery.toLowerCase())
-            );
-
-            const searchResultsContainer = document.getElementById('searchResults');
-            searchResultsContainer.innerHTML = '';
-
-            if (matchingFriends.length === 0) {
-                searchResultsContainer.innerHTML = 'No matching friends found.';
-            } else {
-                const resultList = document.createElement('ul');
-                matchingFriends.forEach(friend => {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = friend.username;
-                    resultList.appendChild(listItem);
-                });
-                searchResultsContainer.appendChild(resultList);
-            }
-        }
-
-        // Display all friends initially
-        const friendsListContainer = document.getElementById('friendsList');
-        allFriends.forEach(friend => {
-            const listItem = document.createElement('li');
-            listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
-            listItem.textContent = friend.username;
-
-            const deleteButton = document.createElement('button');
-            deleteButton.className = 'btn btn-danger btn-sm';
-            deleteButton.textContent = 'Delete';
-            deleteButton.onclick = () => deleteFriend(friend.id);
-
-            listItem.appendChild(deleteButton);
-            friendsListContainer.appendChild(listItem);
-        });
-
-        function deleteFriend(friendId) {
-            // Implement the logic to delete a friend
-            // You can use JavaScript to handle the deletion functionality
-            alert(`Deleting friend with ID ${friendId}`);
-        }
-    </script>
+    <!-- Include your custom JavaScript -->
+    <script src="/friends.js"></script>
 </body>
 
 </html>
