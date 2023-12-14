@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('controllers\api\profile')
+    fetch('')
       .then(response => response.json())
       .then(profileData => {
         updateProfileUI(profileData);

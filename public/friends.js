@@ -90,7 +90,6 @@ function deleteFriend(friendId) {
     })
     .then(data => {
         console.log(`Friend ${friendId} deleted successfully`);
-        // You might want to refresh the friends list or update the UI accordingly
     })
     .catch(error => {
         console.error('Error deleting friend:', error);

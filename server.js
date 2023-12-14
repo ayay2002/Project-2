@@ -28,7 +28,7 @@ const sess = {
 };
 
 app.use(session(sess));
-
+app.get('/controllers/api/profile', profilesController.getProfileData);
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use('/api/friends', require('./controllers/api/friend-routes'));
