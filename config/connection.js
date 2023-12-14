@@ -1,5 +1,5 @@
 const { Sequelize } = require('sequelize');
-const Friend = require('../models/friend');
+/* const Friend = require('../models/friend'); */
 require('dotenv').config();
 
 let sequelize;
