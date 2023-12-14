@@ -2,7 +2,7 @@ const router = require('express').Router();
 const {User, Friend} = require('../../models');
 
 
-// /friend
+// /friend  added here
 // Route to create/add a friend
 router.get('/search/:firstName', async (req, res) => {
   try {
