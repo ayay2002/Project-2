@@ -33,5 +33,8 @@ When I lose a friend, I can delete them from my profile.
 ![alt text](assets/images/Screenshot%202023-12-11%20at%206.47.29 PM.png)
 ![alt text](assets/images/Screenshot%202023-12-11%20at%206.47.41 PM.png)
 
+## Link to Deployed Project
+https://cryptic-shore-21983-0ee60fdadc70.herokuapp.com/login
+
 ## Credit
 All of the credit goes to Alexander Booth, Jennifer Winter, Tahynis Lin, Raymond Lacrouts and Landan Bichard.
