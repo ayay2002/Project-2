@@ -8,7 +8,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sequelize = require('./config/connection')
-
+const Friend = require('./models/friend');
 
 const sess = {
   secret: 'Super secret secret',
@@ -31,7 +31,7 @@ app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
+app.use('/api/friends', require('./controllers/api/friend-routes'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));

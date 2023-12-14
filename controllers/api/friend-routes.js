@@ -48,4 +48,26 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+// DELETE route to delete a friend by ID
+router.delete('/:friendId', async (req, res) => {
+  const { friendId } = req.params;
+
+  try {
+      const deletedFriend = await Friend.destroy({
+          where: {
+              id: friendId,
+          },
+      });
+
+      if (deletedFriend) {
+          res.status(200).json({ message: 'Friend deleted successfully' });
+      } else {
+          res.status(404).json({ message: 'Friend not found' });
+      }
+  } catch (error) {
+      console.error('Error deleting friend:', error);
+      res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
 module.exports = router;
