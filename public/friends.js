@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     seedDatabaseAndDisplayFriends();
 
     deleteFriendButton.addEventListener('click', () => {
-        const friendIdToDelete = 'John'; // Replace with the actual friend ID
+        const friendIdToDelete = 1; // Replace with the actual friend ID
         deleteFriend(friendIdToDelete);
     });
 
@@ -32,7 +32,8 @@ function seedDatabase() {
     return Promise.resolve(friendsData);
 }
 
-function displayFriends(friends) {
+//Hardcoded seed database, replace/remove
+/* function displayFriends(friends) {
     const friendsListContainer = document.getElementById('friendsList');
     friendsListContainer.innerHTML = '';
 
@@ -49,7 +50,7 @@ function displayFriends(friends) {
         listItem.appendChild(deleteButton);
         friendsListContainer.appendChild(listItem);
     });
-}
+} */
 
 function searchForFriend(allFriends) {
     const searchQuery = searchInput.value.toLowerCase();
@@ -74,8 +75,8 @@ function searchForFriend(allFriends) {
 }
 
 function deleteFriend(friendId) {
-    const deleteEndpoint = `/api/friends/${friendId}`;
-
+    const deleteEndpoint = `/api/friends/1`;
+    console.log(friendId)
     fetch(deleteEndpoint, {
         method: 'DELETE',
         headers: {

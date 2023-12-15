@@ -27,7 +27,7 @@
                     {{#each friends}}
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         {{this.first_name}} {{this.Last_name}}
-                        <button class="btn btn-danger btn-sm" onclick="deleteFriend('{{this.id}}')">Delete</button>
+                        <button class="btn btn-danger btn-sm" data-id={{this.id}} >Delete</button>
                     </li>
                     {{/each}}
                 </ul>
@@ -42,6 +42,7 @@
 
     <!-- Include your custom JavaScript -->
     <script src="/friends.js"></script>
+    {{!-- onclick="deleteFriend('{{this.id}}')" --}}
 </body>
 
 </html>

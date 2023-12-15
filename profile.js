@@ -21,4 +21,3 @@ document.addEventListener('DOMContentLoaded', () => {
       bioElement.textContent = profileData.bio;
     }
   });
-  
