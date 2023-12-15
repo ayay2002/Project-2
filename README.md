@@ -28,31 +28,31 @@ When I lose a friend, I can delete them from my profile.
 
 ## Technologies Used
 
-- **Node.js:** Version 1.0.0 indicates that your project is using Node.js.
+- **Node.js:** 
 
-- **MySQL:** The `mysql2` package is included, suggesting that your project uses MySQL as a database.
+- **MySQL:** 
 
-- **Express.js:** The `express` package is included, indicating that your project is using Express.js, a popular web application framework for Node.js.
+- **Express.js:**
 
-- **Sequelize:** The `sequelize` package is included, suggesting that your project is using Sequelize as an ORM (Object-Relational Mapping) for database interactions.
+- **Sequelize:** 
 
-- **Dotenv:** The `dotenv` package is included, indicating that you are using environment variables to manage configuration settings.
+- **Dotenv:** 
 
-- **Bcrypt:** The `bcrypt` package is included, suggesting that your project uses bcrypt for password hashing and security-related purposes.
+- **Bcrypt:** 
 
-- **JSON Web Token (jsonwebtoken):** The `jsonwebtoken` package is included, indicating that your project uses JSON Web Tokens for authentication or authorization.
+- **JSON Web Token (jsonwebtoken):** 
 
-- **Express Session:** The `express-session` and `connect-session-sequelize` packages are included, suggesting that your project is using sessions, possibly with Sequelize to store session data in your MySQL database.
+- **Express Session:** 
 
-- **Bootstrap:** The `bootstrap` package is included, indicating that your project uses Bootstrap, a popular CSS framework, for styling.
+- **Bootstrap:** 
 
-- **Chart.js and React-Chartjs-2:** The `chart.js` and `react-chartjs-2` packages are included, indicating that your project uses Chart.js for creating charts, possibly integrated with React.
+- **Chart.js and React-Chartjs-2:** 
 
-- **React:** The `react` and `react-dom` packages are included, suggesting that your project uses React for building user interfaces.
+- **React:** 
 
-- **Cube.js:** The `@cubejs-client/core` package is included, suggesting that your project uses Cube.js for building analytical applications.
+- **Cube.js:** 
 
-- **Parcel:** The `parcel` package is included as a devDependency, indicating that Parcel is used as a bundler for your project.
+- **Parcel:** 
 
 
 ## Dependencies
