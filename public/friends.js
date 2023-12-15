@@ -32,26 +32,6 @@ function seedDatabase() {
     return Promise.resolve(friendsData);
 }
 
-//Hardcoded seed database, replace/remove
-/* function displayFriends(friends) {
-    const friendsListContainer = document.getElementById('friendsList');
-    friendsListContainer.innerHTML = '';
-
-    friends.forEach(friend => {
-        const listItem = document.createElement('li');
-        listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
-        listItem.textContent = `${friend.first_name} ${friend.last_name}`;
-
-        const deleteButton = document.createElement('button');
-        deleteButton.className = 'btn btn-danger btn-sm';
-        deleteButton.textContent = 'Delete';
-        deleteButton.onclick = () => deleteFriend(friend.first_name);
-
-        listItem.appendChild(deleteButton);
-        friendsListContainer.appendChild(listItem);
-    });
-} */
-
 function searchForFriend(allFriends) {
     const searchQuery = searchInput.value.toLowerCase();
 
