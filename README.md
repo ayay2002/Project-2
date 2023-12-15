@@ -29,29 +29,17 @@ When I lose a friend, I can delete them from my profile.
 ## Technologies Used
 
 - **Node.js:** 
-
 - **MySQL:** 
-
 - **Express.js:**
-
 - **Sequelize:** 
-
 - **Dotenv:** 
-
 - **Bcrypt:** 
-
 - **JSON Web Token (jsonwebtoken):** 
-
 - **Express Session:** 
-
 - **Bootstrap:** 
-
 - **Chart.js and React-Chartjs-2:** 
-
 - **React:** 
-
 - **Cube.js:** 
-
 - **Parcel:** 
 
 
