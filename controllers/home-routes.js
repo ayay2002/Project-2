@@ -56,7 +56,7 @@ router.get('/profile', async (req, res) => {
     const user = userData.get({plain:true})
     console.log('USER');
     console.log(user)
-    res.render("profile", {...user})
+    res.render("profile", {user})
   }
   catch(err){
     res.status(500).json(err)

@@ -1,5 +1,6 @@
 <header class="jumbotron text-center">
-    <h1>{{ first_name }}'s Profile</h1>
+    {{#if user }}
+    <h1>{{ user.first_name }}'s Profile</h1>
     {{!-- <img src="{{ avatar }}" alt="{{ username }}'s Avatar" class="img-thumbnail"> --}}
 </header>
 
@@ -12,16 +13,16 @@
         </div> --}}
 
         <div class="col-md-6">
-            <p>Name: {{ first_name }} {{ last_name }}</p>
-            <p>Email: {{ email }}</p>
+            <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+            <p>Email: {{ user.email }}</p>
         </div>
     </div>
 </section>
 
 <footer class="text-center mt-4">
-    <p>&copy; 2023 {{ username }}</p>
+    <p>&copy; 2023 {{ user.username }}</p>
 </footer>
-
+{{/if}}
 <!-- add bootstrap for js if needed -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
