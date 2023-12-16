@@ -1,33 +1,22 @@
 const { Sequelize } = require('sequelize');
+/* const Friend = require('../models/friend'); */
 require('dotenv').config();
 
 let sequelize;
 
-if (process.env.DATABASE_URL) {
-  // Use the provided DATABASE_URL if available (Heroku)
-  sequelize = new Sequelize(process.env.DATABASE_URL, {
-    dialect: 'mysql',
-    protocol: 'mysql',
-    logging: true,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false, // <<<<<<< YOU NEED THIS LINE
-      },
-    },
-  });
+if (process.env.JAWSDB_URL) {
+  // Use Heroku database
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   // Use local database configuration
-  sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USER,
-    process.env.DB_PASSWORD,
-    {
-      host: 'localhost',
-      dialect: 'mysql',
-      port: 3306,
-    }
-  );
+  sequelize = new Sequelize({
+    host: 'localhost',  // Update with your local host
+    username: 'root', // Update with your local username
+    password: 'Hr3694642', // Update with your local password
+    port: 3306,
+    database: 'friends_db', // Update with your local database
+    dialect: 'mysql',
+  });
 }
 
 module.exports = sequelize;

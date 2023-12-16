@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,29 +6,32 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
-<div class="container mt-5">
-    <div class="card">
-        <div class="card-header text-center">
-            <h3>My Friends</h3>
-        </div>
-        <div class="card-body">
-            <div class="form-group">
-                <label for="friendSearch">Search for new friends:</label>
-                <div class="input-group">
-                    <input type="text" class="form-control" id="friendSearch" name="friendSearch" placeholder="Enter friend's username">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" onclick="searchForFriend()">Search</button>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header text-center">
+                <h3>My Friends</h3>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="searchInput">Search for new friends:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchInput" name="searchInput" placeholder="Enter friend's username">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" onclick="searchForFriend()">Search</button>
+                        </div>
                     </div>
                 </div>
+                <div id="searchResults"></div>
+                <ul class="list-group" id="friendsList">
+                    {{#each friends}}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{this.first_name}} {{this.Last_name}}
+                        <button class="btn btn-danger btn-sm" data-id={{this.id}} >Delete</button>
+                    </li>
+                    {{/each}}
+                </ul>
             </div>
-            <ul class="list-group">
-                {{#each friends}}
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    {{this.username}}
-                    <button class="btn btn-danger btn-sm" onclick="deleteFriend('{{this.id}}')">Delete</button>
-                </li>
-                {{/each}}
-            </ul>
         </div>
     </div>
 
@@ -39,17 +40,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-        function searchForFriend() {
-            // Implement the logic to search for new friends
-            // You can use JavaScript to handle the search functionality
-        }
-
-        function deleteFriend(friendId) {
-            // Implement the logic to delete a friend
-            // You can use JavaScript to handle the deletion functionality
-        }
-    </script>
+    <!-- Include your custom JavaScript -->
+    <script src="/friends.js"></script>
+    {{!-- onclick="deleteFriend('{{this.id}}')" --}}
 </body>
 
 </html>

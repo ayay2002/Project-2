@@ -6,6 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+<<<<<<< HEAD
 const { Sequelize } = require('sequelize');
 const sequelize = require('./config/connection')
 // let sequelize;
@@ -27,6 +28,12 @@ const sequelize = require('./config/connection')
 //   });
 // }
 
+=======
+
+const sequelize = require('./config/connection')
+
+
+>>>>>>> d3e5b6bdc59a37e85c335086d47c885358fa814c
 const sess = {
   secret: 'Super secret secret',
   cookie: {
