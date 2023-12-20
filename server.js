@@ -15,7 +15,11 @@ var sequelize = require('./config/connection')
 
 if (process.env.JAWSDB_URL) {
   // Use Heroku database
-  sequelize = new Sequelize(process.env.JAWSDB_URL);
+  sequelize = new Sequelize(process.env.JAWSDB_URL, {
+    dialect:  'postgres',
+    protocol: 'postgres',
+    logging:  true
+  });
 } else {
   // Use local database configuration
   sequelize = new Sequelize({
