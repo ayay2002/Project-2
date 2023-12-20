@@ -12,7 +12,7 @@ if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize({
     host: 'localhost',  // Update with your local host
     username: 'root', // Update with your local username
-    password: 'Hr3694642', // Update with your local password
+    password: '', // Update with your local password
     port: 3306,
     database: 'friends_db', // Update with your local database
     dialect: 'mysql',
