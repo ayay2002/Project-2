@@ -8,6 +8,9 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sequelize = require('./config/connection')
+
+//Tutor says that this code below was causing the error
+
 // let sequelize;
 // if (process.env.JAWSDB_URL) {
 //   // Use Heroku database
