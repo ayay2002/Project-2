@@ -7,30 +7,31 @@ const PORT = process.env.PORT || 3001;
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const { Sequelize } = require('sequelize');
-var sequelize = require('./config/connection')
+const sequelize = require('./config/connection')
+
+
 // let sequelize;
+// if (process.env.JAWSDB_URL) {
+//   // Use Heroku database
+//   sequelize = new Sequelize(process.env.JAWSDB_URL, {
+//     dialect:  'postgres',
+//     protocol: 'postgres',
+//     logging:  true
+//   });
+// } else {
+//   // Use local database configuration
+//   sequelize = new Sequelize({
+//     host: 'localhost',  // Update with your local host
+//     username: 'root', // Update with your local username
+//     password: '', // Update with your local password
+//     port: 3306,
+//     database: 'friends_db', // Update with your local database
+//     dialect: 'mysql',
+//   });
+// }
 
 
 
-if (process.env.JAWSDB_URL) {
-  // Use Heroku database
-  sequelize = new Sequelize(process.env.JAWSDB_URL, {
-    dialect:  'postgres',
-    protocol: 'postgres',
-    logging:  true
-  });
-} else {
-  // Use local database configuration
-  sequelize = new Sequelize({
-    host: 'localhost',  // Update with your local host
-    username: 'root', // Update with your local username
-    password: '', // Update with your local password
-    port: 3306,
-    database: 'friends_db', // Update with your local database
-    dialect: 'mysql',
-  });
-}
 
 const sess = {
   secret: 'Super secret secret',
