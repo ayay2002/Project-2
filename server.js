@@ -9,7 +9,6 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sequelize = require('./config/connection')
 
-//Tutor says that this code below was causing the error
 
 // let sequelize;
 // if (process.env.JAWSDB_URL) {
@@ -24,7 +23,7 @@ const sequelize = require('./config/connection')
 //   sequelize = new Sequelize({
 //     host: 'localhost',  // Update with your local host
 //     username: 'root', // Update with your local username
-//     password: 'Beau123!', // Update with your local password
+//     password: '', // Update with your local password
 //     port: 3306,
 //     database: 'friends_db', // Update with your local database
 //     dialect: 'mysql',
