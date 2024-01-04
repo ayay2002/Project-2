@@ -4,9 +4,9 @@ require('dotenv').config();
 
 let sequelize;
 
-if (process.env.JAWSDB_URL) {
+if (process.env.DB_NAME) {
   // Use Heroku database
-  sequelize = new Sequelize(process.env.JAWSDB_URL);
+  sequelize = new Sequelize(process.env.DB_NAME);
 } else {
   // Use local database configuration
   sequelize = new Sequelize({
