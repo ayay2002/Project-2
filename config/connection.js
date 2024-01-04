@@ -1,8 +1,9 @@
-const { Sequelize } = require('sequelize');
+const Sequelize = require('sequelize');
 /* const Friend = require('../models/friend'); */
 require('dotenv').config();
 
 let sequelize;
+
 
 if (process.env.DB_NAME) {
   // Use Heroku database

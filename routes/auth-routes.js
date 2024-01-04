@@ -42,4 +42,9 @@ router.post('/login', async (req, res) => {
   }
 });
 
+//Logout
+router.post('/logout', (req, res) => {
+  req.session.destroy();
+  res.redirect('/login');
+});
 module.exports = router;
